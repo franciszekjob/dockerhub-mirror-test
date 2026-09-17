@@ -140,11 +140,11 @@ jobs:
         run: docker buildx imagetools create -t fjobswm/mirror-test:latest franciszekjob/mirror-test:latest
 
   # Dispatch the version bump workflow on pathfinder-infra
-  update-infra:
-    if: ${{ github.event_name == 'release' && !github.event.release.prerelease }}
-    needs: tag-release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dispatch pathfinder-infra version bump
-        run: |
-          echo "would dispatch update-pathfinder-version.yml with version=${{ github.event.release.tag_name }}"
+  # update-infra:
+  #   if: ${{ github.event_name == 'release' && !github.event.release.prerelease }}
+  #   needs: tag-release
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Dispatch pathfinder-infra version bump
+  #       run: |
+  #         echo "would dispatch update-pathfinder-version.yml with version=${{ github.event.release.tag_name }}"
